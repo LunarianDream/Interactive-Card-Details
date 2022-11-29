@@ -1,0 +1,166 @@
+:root {
+    --activeInputBorder: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+    --inputError: hsl(0, 100%, 66%);
+
+    --white: hsl(0, 0%, 100%);
+    --lightGrayishViolet: hsl(270, 3%, 87%);
+    --darkGrayishViolet: hsl(279, 6%, 55%);
+    --veryDarkViolet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+}
+
+.card {
+    border-radius: .25em;
+    color: white;
+    margin: 1em;
+    width: 286px;
+    height: 157px;
+    position: absolute;
+}
+
+.card span {
+    font-size: .6em;
+    text-transform: uppercase;
+}
+
+.card_back {
+    background-image: url(../Images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: 0;
+    top: 1em;
+}
+
+.card_back span {
+    color: white;
+    font-size: .5em;
+    position: absolute;
+    right: 4.5em;
+    top: 45%;
+}
+
+
+.card_front {
+    background-image: url(../Images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 6em;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card_number{
+    bottom: 1.5em;
+    font-size: 1.6em;
+    justify-self: center;
+    letter-spacing: .1em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.name_expire {
+    bottom: 1em;
+    letter-spacing: .05em;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name_expire > span:first-of-type {
+    margin-left: 2em;
+}
+
+.name_expire >span:last-of-type {
+    margin-right: 2em;
+}
+
+.white_circle {
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 30px;
+}
+
+
+.empty_circle {
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 12px;
+    position: absolute;
+    left: 3.3em;
+    top: 1.5em;
+    width: 12px;
+}
+
+.card_info {
+    margin: 5em 1.5em 3em 1.5em;
+}
+
+.form_row {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+}
+
+.form_row:nth-of-type(3) {
+    outline: 1px solid red;
+    /* display: inline */
+}
+
+label {
+    font-size: .7em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+input {
+    border: 1px solid var(--lightGrayishViolet);
+    border-radius: .5em;
+    color: var(--lightGrayishViolet);
+    font-size: 1em;
+    height: 2.7em;
+    padding: 1em;
+}
+
+input::placeholder {
+    color: var(--lightGrayishViolet);
+    font-size: 1em;
+    height: 2.7em;
+}
+
+.expire {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+}
+
+input[name="card_year"], input[name="card_month"] {
+    width: 24%;
+}
+
+input[name="CVC"] {
+    width: 50%;
+}
+
+.form_row > button {
+    background-color: var(--veryDarkViolet);
+    border-radius: .5em;
+    color: white;
+    font-size: .9em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}

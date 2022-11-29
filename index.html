@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS Styles -->
+    <link href="./CSS/styles.css" rel="stylesheet" />
+    <link href="./CSS/layout.css" rel="stylesheet" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <picture>
+            <source srcset="/Images/bg-main-desktop.png" media="(min-max: 700px)">
+            <img src="./Images/bg-main-mobile.png" />
+        </picture>
+    </header>
+    <main>
+        <div class="card card_back">
+            <span>000</span>
+        </div>
+        <div class="card card_front">
+            <div class="white_circle"></div>
+            <div class="empty_circle"></div>
+            <div class="card_number">
+                <span class="front_card_numbers">0000 0000 0000 0000</span>
+            </div>
+            <div class="name_expire">
+                <span>Jane Appleseed</span>
+                <span>00/00</span>
+            </div>
+            </div>
+        </div>
+        <div class="white_background">
+            <div class="card_info">
+                <form id="card_details">
+                    <div class="form_row"> 
+                        <label for="cardholder">Cardholder Name</label>
+                        <input type="text" id="cardholder" placeholder="e.g. Jane Appleseed" name="cardholder" />
+                    </div>
+                    <div class="form_row">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="num" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" name="cardnumber" />
+                    </div>
+                    <div class="form_row">
+                        <div>
+                            <label for="expiration"> Exp. Date (MM/YY)</label>
+                            <input type="num" id="expiration" placeholder="MM" name="card_month" />
+                        </div>
+                        <div>
+                            <input type="num" placeholder="YY" name="card_year" />
+                        </div>
+                        <div>
+                            <label for="CVC">CVC</label>
+                            <input type="num" id="CVC" placeholder="e.g. 123" name="CVC" />
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <button class="form_submit">Confirm</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="confirmation">
+
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
