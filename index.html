@@ -14,26 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <picture>
-            <source srcset="/Images/bg-main-desktop.png" media="(min-max: 700px)">
-            <img src="./Images/bg-main-mobile.png" />
-        </picture>
-    </header>
+
     <main>
-        <div class="card card_back">
-            <span>000</span>
-        </div>
-        <div class="card card_front">
-            <div class="white_circle"></div>
-            <div class="empty_circle"></div>
-            <div class="card_number">
-                <span class="front_card_numbers">0000 0000 0000 0000</span>
+        <div class="color_background">
+            <!-- <picture>
+                <source srcset="/Images/bg-main-desktop.png" media="(min-max:1080px)">
+                <img src="./Images/bg-main-mobile.png" alt=""/>
+            </picture> -->
+            <div class="card card_back">
+                <span>000</span>
             </div>
-            <div class="name_expire">
-                <span>Jane Appleseed</span>
-                <span>00/00</span>
-            </div>
+            <div class="card card_front">
+                <div class="white_circle"></div>
+                <div class="empty_circle"></div>
+                <div class="card_number">
+                    <span class="front_card_numbers">0000 0000 0000 0000</span>
+                </div>
+                <div class="name_expire">
+                    <span>Jane Appleseed</span>
+                    <span>00/00</span>
+                </div>
             </div>
         </div>
         <div class="white_background">
@@ -42,31 +42,54 @@
                     <div class="form_row"> 
                         <label for="cardholder">Cardholder Name</label>
                         <input type="text" id="cardholder" placeholder="e.g. Jane Appleseed" name="cardholder" />
+                        <small>*</small>
                     </div>
                     <div class="form_row">
                         <label for="cardnumber">Card Number</label>
                         <input type="num" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" name="cardnumber" />
+                        <small>*</small>
                     </div>
-                    <div class="form_row">
-                        <div>
-                            <label for="expiration"> Exp. Date (MM/YY)</label>
-                            <input type="num" id="expiration" placeholder="MM" name="card_month" />
+                    <div class="form_row expire">
+                        <div class="dates">
+                            <label for="month"> Exp. Date (MM/YY)</label>
+                            <div>
+                                <input type="text" 
+                                       id="month" 
+                                       placeholder="MM" 
+                                       maxlength="2"
+                                       minlength="3"
+                                       name="card_month" />
+                                <input type="text" 
+                                       id="year" 
+                                       placeholder="YY" 
+                                       maxlength="2"
+                                       minlength="2"
+                                       name="card_year" />
+                                <small>*</small>
+                            </div>
                         </div>
-                        <div>
-                            <input type="num" placeholder="YY" name="card_year" />
-                        </div>
-                        <div>
+                        <div class="CVC">
                             <label for="CVC">CVC</label>
-                            <input type="num" id="CVC" placeholder="e.g. 123" name="CVC" />
+                            <input type="text" 
+                                   id="CVC" 
+                                   placeholder="e.g. 123" 
+                                   maxlength="3"
+                                   minlength="3"
+                                   name="CVC" />
+                            <small>*</small>
                         </div>
                     </div>
                     <div class="form_row">
-                        <button class="form_submit">Confirm</button>
+                        <button class="form_submit" type="submit">Confirm</button>
                     </div>
 
                 </form>
             </div>
             <div class="confirmation">
+                <img class="complete_icon" src="./Images/icon-complete.svg" alt="" />
+                <h1>Thank You!</h1>
+                <p>We've added your card details!</p>
+                <button>Continue</button>
 
             </div>
         </div>

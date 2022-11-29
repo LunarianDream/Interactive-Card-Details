@@ -14,6 +14,12 @@ body {
     position: relative;
 }
 
+.color_background {
+    position: relative;
+
+    padding: 6em;
+}
+
 .card {
     border-radius: .25em;
     color: white;
@@ -32,7 +38,7 @@ body {
     background-image: url(../Images/bg-card-back.png);
     background-repeat: no-repeat;
     background-size: cover;
-    right: 0;
+    left: 3em;
     top: 1em;
 }
 
@@ -105,35 +111,30 @@ body {
     width: 12px;
 }
 
+
 .card_info {
-    margin: 5em 1.5em 3em 1.5em;
+    max-width: 321px;
 }
 
 .form_row {
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
+    margin-bottom: 1em;
 
-}
-
-.form_row:nth-of-type(3) {
-    outline: 1px solid red;
-    /* display: inline */
 }
 
 label {
     font-size: .7em;
     letter-spacing: .1em;
+    margin-bottom: 1em;
     text-transform: uppercase;
 }
 
 input {
     border: 1px solid var(--lightGrayishViolet);
     border-radius: .5em;
-    color: var(--lightGrayishViolet);
     font-size: 1em;
     height: 2.7em;
     padding: 1em;
+    width: 100%;
 }
 
 input::placeholder {
@@ -142,25 +143,123 @@ input::placeholder {
     height: 2.7em;
 }
 
+small {
+    display: none;
+}
+
 .expire {
     display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
+
+.expire > div {
+    display: flex;
     flex-direction: column;
-    background-color: blue;
 }
 
-input[name="card_year"], input[name="card_month"] {
-    width: 24%;
-}
-
-input[name="CVC"] {
+.dates {
     width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
-.form_row > button {
+.dates input {
+    width: 47%;
+}
+
+.CVC {
+    width: 50%
+}
+
+.CVC input {
+    width: 100%;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    place-items: center;
+    max-width: 321px;
+}
+
+.confirmation img {
+    width: 80px;
+}
+
+.confirmation h1 {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.confirmation p {
+    color: var(--darkGrayishViolet);
+    margin-bottom: 1.5em;
+}
+
+
+button {
     background-color: var(--veryDarkViolet);
+    border: none;
     border-radius: .5em;
     color: white;
     font-size: .9em;
+    letter-spacing: .1em;
     padding-bottom: 1em;
     padding-top: 1em;
+    width: 100%
+}
+
+/* =========== Desktop Styles ===========
+   ====================================== */
+
+@media only screen and (min-width: 1080px) {
+    
+
+    .card {
+        width: 448px;
+        height: 245px;
+    }
+
+    .card span {
+        font-size: .8em;
+    }
+
+    .card_back {
+        left: 15em;
+        top: 24em;
+    }
+
+    .card_front {
+        left: 8.5em;
+        top: 8.5em;
+
+    }
+
+    .card_number {
+        font-size: 2em;
+    }
+
+    .name_expire {
+        font-size: 1em;
+    }
+
+    .white_circle {
+        height: 50px;
+        left: 2em;
+        width: 50px;
+        top: 1.5em;
+    }
+
+    .empty_circle {
+        height: 20px;
+        left: 5.75em;
+        top: 2.25em;
+        width: 20px;
+    }
+
+    .confirmation {
+        width: 380px;
+    }
 }
