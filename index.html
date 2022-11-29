@@ -46,7 +46,12 @@
                     </div>
                     <div class="form_row">
                         <label for="cardnumber">Card Number</label>
-                        <input type="num" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" name="cardnumber" />
+                        <input type="num"
+                               id="cardnumber" 
+                               maxlength="16"
+                               minlength="16"
+                               placeholder="e.g. 1234 5678 9123 0000"
+                               name="cardnumber" />
                         <small>*</small>
                     </div>
                     <div class="form_row expire">
@@ -89,11 +94,12 @@
                 <img class="complete_icon" src="./Images/icon-complete.svg" alt="" />
                 <h1>Thank You!</h1>
                 <p>We've added your card details!</p>
-                <button>Continue</button>
+                <button class="continue">Continue</button>
 
             </div>
         </div>
     </main>
-    
+    <!-- Javascript -->
+    <script src="./Javascript/card_validation.js"></script>
 </body>
 </html>

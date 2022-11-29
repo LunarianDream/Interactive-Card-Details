@@ -1,5 +1,5 @@
 :root {
-    --activeInputBorder: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+    --activeInputBorder: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     --inputError: hsl(0, 100%, 66%);
 
     --white: hsl(0, 0%, 100%);
@@ -114,6 +114,7 @@ body {
 
 .card_info {
     max-width: 321px;
+    z-index: 9999;
 }
 
 .form_row {
@@ -124,7 +125,6 @@ body {
 label {
     font-size: .7em;
     letter-spacing: .1em;
-    margin-bottom: 1em;
     text-transform: uppercase;
 }
 
@@ -133,8 +133,13 @@ input {
     border-radius: .5em;
     font-size: 1em;
     height: 2.7em;
+    margin-top: .5em;
     padding: 1em;
     width: 100%;
+}
+
+input:focus, input:active {
+    border: 1px solid red;
 }
 
 input::placeholder {
@@ -143,9 +148,9 @@ input::placeholder {
     height: 2.7em;
 }
 
-small {
+/* small {
     display: none;
-}
+} */
 
 .expire {
     display: flex;
@@ -204,6 +209,7 @@ button {
     border: none;
     border-radius: .5em;
     color: white;
+    cursor: pointer;
     font-size: .9em;
     letter-spacing: .1em;
     padding-bottom: 1em;
