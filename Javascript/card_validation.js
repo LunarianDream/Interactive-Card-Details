@@ -15,11 +15,14 @@ let CVC = document.querySelector('#CVC');
 let input = document.querySelectorAll('input');
 let small = document.querySelectorAll('small');
 
+let isValid = true
+
 ////////////////////
 
 document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        form.reset()
     });
 
 });
@@ -76,9 +79,10 @@ const cardValidation = function(field, message) {
                 input[i].nextElementSibling.style.display = 'inline';
                 input[i].nextElementSibling.innerText = `Can't be blank`;
                 input[i].nextElementSibling.style.color = 'var(--inputError)';
-                let isValid = false
+                isValid = false
             } else {
-                form.submit()
+                isValid
+                form.submit();
             }
     };
 };

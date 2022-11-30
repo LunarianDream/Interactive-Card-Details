@@ -134,12 +134,13 @@ input {
     font-size: 1em;
     height: 2.7em;
     margin-top: .5em;
+    outline: none;
     padding: 1em;
     width: 100%;
 }
 
 input:focus, input:active {
-    border: 1px solid red;
+    border-image: var(--activeInputBorder);
 }
 
 input::placeholder {
