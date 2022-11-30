@@ -92,8 +92,8 @@ main {
 
     .card_info {
         position: absolute;
+        left: 18em;
         top: 10em;
-        right: 10em;
     }
 
     .confirmation {

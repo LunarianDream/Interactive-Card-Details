@@ -205,7 +205,7 @@ small {
 }
 
 
-input[type="button"] {
+input[type="button"], button {
     background-color: var(--veryDarkViolet);
     border: none;
     border-radius: .5em;

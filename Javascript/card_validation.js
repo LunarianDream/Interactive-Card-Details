@@ -21,8 +21,11 @@ let small = document.querySelectorAll('small');
 let isValid = true
 
 /////////////////////////////////
-
-const cardValidation = function(field, message) {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cardValidation;
+});
+const cardValidation = function() {
 
 /* ==================== 
 If fields are empty 
@@ -91,8 +94,7 @@ Entire Card Validation
 
             } else if (isValid == true) {
                 cardInfo.style.display = 'none'
-                confirmation.style.display = 'flex';
-                
+                confirmation.style.display = 'flex';                
             }
         };
 };
@@ -153,11 +155,6 @@ confirm_button.addEventListener('click', cardValidation);
 continue_button.addEventListener('click', () => {
     confirmation.style.display = 'none';
     cardInfo.style.display = 'block';
-    form.reset();
     input[i].style.borderColor = 'var(--lightGrayishViolet';
     input[i].nextElementSibling.style.display = 'none';
-});
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
 });
