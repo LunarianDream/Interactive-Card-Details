@@ -20,77 +20,150 @@ let small = document.querySelectorAll('small');
 
 let isValid = true
 
-////////////////////
-
-document.addEventListener('DOMContentLoaded', () => {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.reset()
-    });
-
-});
-
-// const cardValidation = function () {
-//     let check_cardholder = cardholder.value;
-//     let check_cardnumber = cardnumber.value;
-//     let check_month = month.value.trim();
-//     let check_year = year.value.trim();
-//     let check_CVC = CVC.value.trim();
-//     let isValid = true;
-
-//     if (check_cardholder === '') {
-//         setErrorFor(cardholder, `Can't be blank`);
-//         isValid = false;
-//     } else {
-//         isValid
-//     };
-
-//     if (check_cardnumber == '') {
-//         setErrorFor(cardnumber, `Can't be blank`)
-//         isValid = false
-//     } else {
-//         isValid
-//     }
-
-//     if (check_month == '') {
-//         setErrorFor(month, `Can't be blank`)
-//         isValid = false
-//     } else {
-//         isValid
-//     }
-
-//     if (check_year == '') {
-//         setErrorFor(year, `Can't be blank`)
-//         isValid = false 
-//     } else {
-//         isValid
-//     }
-
-//     if (check_CVC == '') {
-//         setErrorFor(CVC, `Can't be blank`)
-//         isValid = false
-//     } else {
-//         isValid
-//     }
-// }
+/////////////////////////////////
 
 const cardValidation = function(field, message) {
+
+/* ==================== 
+If fields are empty 
+======================= */
 
     for (let i = 0; i < input.length; i++) {
             if (input[i].value == '') {
                 input[i].style.borderColor = 'var(--inputError)';
                 input[i].nextElementSibling.style.display = 'inline';
                 input[i].nextElementSibling.innerText = `Can't be blank`;
-                input[i].nextElementSibling.style.color = 'var(--inputError)';
-                isValid = false
+                isValid = false;
             } else {
-                isValid;
-                form.submit();
-                cardInfo.style.display = 'none';
-                confirmation.style.display = 'flex';
-            }
-    };
+                isValid = false;
+            };
+        };
+/* ==================== 
+Cardholder Name
+======================= */
+    if(cardholder.value.match('[0-9]+')) {
+        cardholder.style.borderColor = 'var(--inputError)';
+        cardholder.nextElementSibling.style.display = 'inline';
+        cardholder.nextElementSibling.innerText = `Can't contain numbers`;
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+
+/* ==================== 
+Cardnumber
+======================= */
+    
+    if (cardnumber.value.match('[a-z]+')) {
+        cardnumber.style.borderColor = 'var(--inputError)';
+        cardnumber.nextElementSibling.style.display = 'inline';
+        cardnumber.nextElementSibling.innerText = `Can't contain letters`;
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+    
+/* ==================== 
+Month
+======================= */
+    
+    if (month.value.match('[a-z]+')) {
+        month.style.borderColor = 'var(--inputError)';
+        year.nextElementSibling.style.display = 'inline';
+        year.nextElementSibling.innerText = `Can't contain letters`;
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+
+/* ==================== 
+Year
+======================= */
+
+    if (year.value.match('[a-z]+')) {
+        year.style.borderColor = 'var(--inputError)';
+        year.nextElementSibling.style.display = 'inline';
+        year.nextElementSibling.innerText = `Can't contain letters`;
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+
+/* ==================== 
+CVC
+======================= */
+
+    if (CVC.value.match('[a-z]+')) {
+        CVC.style.borderColor = 'var(--inputError)';
+        CVC.nextElementSibling.style.display = 'inline';
+        CVC.nextElementSibling.innerText = `Can't contain letters`;
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+
+/* ==================== 
+Entire Card Validation
+======================= */
+
+    if (input[i].length = true ) {
+        cardInfo.style.display = 'none'
+        confirmation.style.display = 'flex';
+    }
+
 };
+
+/////////////////////////////////
+/* Card and Form Matching */
+/////////////////////////////////
+
+let frontCardNumbers = document.querySelector('.front_card_numbers');
+let frontCardName = document.querySelector('.front_card_name');
+let frontCardMonth = document.querySelector('.front_card_month');
+let frontCardYear = document.querySelector('.front_card_year');
+let backCardCVC = document.querySelector('.back_card_CVC');
+
+/* ==================== 
+Front Card Number
+======================= */
+cardnumber.addEventListener('keyup', () => {
+    frontCardNumbers.innerText = cardnumber.value;
+});
+
+/* ==================== 
+Front Cardholder Name
+======================= */
+
+cardholder.addEventListener('keyup', () => {
+    frontCardName.innerText = cardholder.value;
+});
+
+/* ==================== 
+Front Card Month
+======================= */
+month.addEventListener('keyup', () => {
+    frontCardMonth.innerText = month.value;
+});
+
+/* ==================== 
+Front Card Year
+======================= */
+
+year.addEventListener('keyup', () => {
+    frontCardYear.innerText = year.value;
+});
+
+/* ==================== 
+Back Card CVC
+======================= */
+
+CVC.addEventListener('keyup', () => {
+    backCardCVC.innerText = CVC.value;
+})
+
+/////////////////////////////////
+/* Buttons */
+/////////////////////////////////
 
 confirm_button.addEventListener('click', cardValidation);
 continue_button.addEventListener('click', () => {
@@ -99,4 +172,9 @@ continue_button.addEventListener('click', () => {
     form.reset();
     input[i].style.borderColor = 'var(--lightGrayishViolet';
     input[i].nextElementSibling.style.display = 'none';
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.reset()
 });

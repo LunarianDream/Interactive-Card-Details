@@ -218,6 +218,10 @@ input[type="button"] {
     width: 100%
 }
 
+small {
+    color: var(--inputError);
+}
+
 /* =========== Desktop Styles ===========
    ====================================== */
 
