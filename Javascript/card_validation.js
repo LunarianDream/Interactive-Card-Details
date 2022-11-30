@@ -34,83 +34,67 @@ If fields are empty
                 input[i].nextElementSibling.style.display = 'inline';
                 input[i].nextElementSibling.innerText = `Can't be blank`;
                 isValid = false;
-            } else {
-                isValid = false;
-            };
-        };
+
 /* ==================== 
 Cardholder Name
 ======================= */
-    if(cardholder.value.match('[0-9]+')) {
-        cardholder.style.borderColor = 'var(--inputError)';
-        cardholder.nextElementSibling.style.display = 'inline';
-        cardholder.nextElementSibling.innerText = `Can't contain numbers`;
-        isValid = false;
-    } else {
-        isValid = true;
-    }
+
+            } else if(cardholder.value.match('[0-9]+')) {
+                cardholder.style.borderColor = 'var(--inputError)';
+                cardholder.nextElementSibling.style.display = 'inline';
+                cardholder.nextElementSibling.innerText = `Can't contain numbers`;
+                isValid = false;
 
 /* ==================== 
 Cardnumber
 ======================= */
-    
-    if (cardnumber.value.match('[a-z]+')) {
-        cardnumber.style.borderColor = 'var(--inputError)';
-        cardnumber.nextElementSibling.style.display = 'inline';
-        cardnumber.nextElementSibling.innerText = `Can't contain letters`;
-        isValid = false;
-    } else {
-        isValid = true;
-    }
-    
+
+            } else if (cardnumber.value.match('[a-z]+')) {
+                cardnumber.style.borderColor = 'var(--inputError)';
+                cardnumber.nextElementSibling.style.display = 'inline';
+                cardnumber.nextElementSibling.innerText = `Can't contain letters`;
+                isValid = false;
+
 /* ==================== 
 Month
 ======================= */
-    
-    if (month.value.match('[a-z]+')) {
-        month.style.borderColor = 'var(--inputError)';
-        year.nextElementSibling.style.display = 'inline';
-        year.nextElementSibling.innerText = `Can't contain letters`;
-        isValid = false;
-    } else {
-        isValid = true;
-    }
+
+            } else if (month.value.match('[a-z]+')) {
+                month.style.borderColor = 'var(--inputError)';
+                year.nextElementSibling.style.display = 'inline';
+                year.nextElementSibling.innerText = `Can't contain letters`;
+                isValid = false;
 
 /* ==================== 
 Year
 ======================= */
 
-    if (year.value.match('[a-z]+')) {
-        year.style.borderColor = 'var(--inputError)';
-        year.nextElementSibling.style.display = 'inline';
-        year.nextElementSibling.innerText = `Can't contain letters`;
-        isValid = false;
-    } else {
-        isValid = true;
-    }
+            } else if (year.value.match('[a-z]+')) {
+                year.style.borderColor = 'var(--inputError)';
+                year.nextElementSibling.style.display = 'inline';
+                year.nextElementSibling.innerText = `Can't contain letters`;
+                isValid = false;
 
 /* ==================== 
 CVC
 ======================= */
 
-    if (CVC.value.match('[a-z]+')) {
-        CVC.style.borderColor = 'var(--inputError)';
-        CVC.nextElementSibling.style.display = 'inline';
-        CVC.nextElementSibling.innerText = `Can't contain letters`;
-        isValid = false;
-    } else {
-        isValid = true;
-    }
+            } else if (CVC.value.match('[a-z]+')) {
+                CVC.style.borderColor = 'var(--inputError)';
+                CVC.nextElementSibling.style.display = 'inline';
+                CVC.nextElementSibling.innerText = `Can't contain letters`;
+                isValid = false;
 
 /* ==================== 
 Entire Card Validation
 ======================= */
 
-    if (input[i].length = true ) {
-        cardInfo.style.display = 'none'
-        confirmation.style.display = 'flex';
-    }
-
+            } else if (isValid == true) {
+                cardInfo.style.display = 'none'
+                confirmation.style.display = 'flex';
+                
+            }
+        };
 };
 
 /////////////////////////////////
@@ -176,5 +160,4 @@ continue_button.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    form.reset()
 });

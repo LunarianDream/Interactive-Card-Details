@@ -82,11 +82,11 @@ body {
     justify-content: space-between;
 }
 
-.name_expire > span:first-of-type {
+.name_expire > div:first-of-type {
     margin-left: 2em;
 }
 
-.name_expire >span:last-of-type {
+.name_expire >div:last-of-type {
     margin-right: 2em;
 }
 
@@ -140,11 +140,11 @@ input {
 }
 
 input:focus, input:active {
-    border-image: var(--activeInputBorder);
+    border: 1px solid var(--activeInputBorder)
 }
 
 input::placeholder {
-    color: var(--lightGrayishViolet);
+    color: var(--darkGrayishViolet);
     font-size: 1em;
     height: 2.7em;
 }
