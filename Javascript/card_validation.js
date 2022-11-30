@@ -6,6 +6,9 @@ let form = document.querySelector('#card_details');
 let confirm_button = document.querySelector('.form_submit');
 let continue_button = document.querySelector('.continue');
 
+let cardInfo = document.querySelector('.card_info');
+let confirmation = document.querySelector('.confirmation');
+
 let cardholder = document.querySelector('#cardholder');
 let cardnumber = document.querySelector('#cardnumber');
 let month = document.querySelector('#month');
@@ -81,10 +84,17 @@ const cardValidation = function(field, message) {
                 input[i].nextElementSibling.style.color = 'var(--inputError)';
                 isValid = false
             } else {
-                isValid
-                form.submit();
+                isValid;
+                // form.submit();
+                cardInfo.style.display = 'none';
+                confirmation.style.display = 'flex';
             }
     };
 };
 
 confirm_button.addEventListener('click', cardValidation);
+continue_button.addEventListener('click', () => {
+    confirmation.style.display = 'none';
+    cardInfo.style.display = 'block';
+    form.reset();
+})
