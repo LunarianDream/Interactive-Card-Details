@@ -85,7 +85,7 @@ const cardValidation = function(field, message) {
                 isValid = false
             } else {
                 isValid;
-                // form.submit();
+                form.submit();
                 cardInfo.style.display = 'none';
                 confirmation.style.display = 'flex';
             }
@@ -97,4 +97,6 @@ continue_button.addEventListener('click', () => {
     confirmation.style.display = 'none';
     cardInfo.style.display = 'block';
     form.reset();
-})
+    input[i].style.borderColor = 'var(--lightGrayishViolet';
+    input[i].nextElementSibling.style.display = 'none';
+});
