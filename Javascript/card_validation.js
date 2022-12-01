@@ -18,7 +18,7 @@ let CVC = document.querySelector('#CVC');
 let input = document.querySelectorAll('input');
 let small = document.querySelectorAll('small');
 
-let isValid = true
+
 
 /////////////////////////////////
 form.addEventListener('submit', (e) => {
@@ -26,6 +26,8 @@ form.addEventListener('submit', (e) => {
     cardValidation;
 });
 const cardValidation = function() {
+
+    let isValid = true
 
 /* ==================== 
 If fields are empty 
@@ -37,67 +39,74 @@ If fields are empty
                 input[i].nextElementSibling.style.display = 'inline';
                 input[i].nextElementSibling.innerText = `Can't be blank`;
                 isValid = false;
+            };
+    };
 
 /* ==================== 
 Cardholder Name
 ======================= */
 
-            } else if(cardholder.value.match('[0-9]+')) {
+            if(cardholder.value.match('[0-9]+')) {
                 cardholder.style.borderColor = 'var(--inputError)';
                 cardholder.nextElementSibling.style.display = 'inline';
                 cardholder.nextElementSibling.innerText = `Can't contain numbers`;
                 isValid = false;
+            };
 
 /* ==================== 
 Cardnumber
 ======================= */
 
-            } else if (cardnumber.value.match('[a-z]+')) {
+            if (cardnumber.value.match('[a-z]+')) {
                 cardnumber.style.borderColor = 'var(--inputError)';
                 cardnumber.nextElementSibling.style.display = 'inline';
                 cardnumber.nextElementSibling.innerText = `Can't contain letters`;
                 isValid = false;
+            }
 
 /* ==================== 
 Month
 ======================= */
 
-            } else if (month.value.match('[a-z]+')) {
+            if (month.value.match('[a-z]+')) {
                 month.style.borderColor = 'var(--inputError)';
                 year.nextElementSibling.style.display = 'inline';
                 year.nextElementSibling.innerText = `Can't contain letters`;
                 isValid = false;
+            }
 
 /* ==================== 
 Year
 ======================= */
 
-            } else if (year.value.match('[a-z]+')) {
+            if (year.value.match('[a-z]+')) {
                 year.style.borderColor = 'var(--inputError)';
                 year.nextElementSibling.style.display = 'inline';
                 year.nextElementSibling.innerText = `Can't contain letters`;
                 isValid = false;
+            }
 
 /* ==================== 
 CVC
 ======================= */
 
-            } else if (CVC.value.match('[a-z]+')) {
+            if (CVC.value.match('[a-z]+')) {
                 CVC.style.borderColor = 'var(--inputError)';
                 CVC.nextElementSibling.style.display = 'inline';
                 CVC.nextElementSibling.innerText = `Can't contain letters`;
                 isValid = false;
+            }
 
 /* ==================== 
 Entire Card Validation
 ======================= */
 
-            } else if (isValid == true) {
+            if (isValid == true) {
                 cardInfo.style.display = 'none'
                 confirmation.style.display = 'flex';                
             }
-        };
 };
+
 
 /////////////////////////////////
 /* Card and Form Matching */
