@@ -162,8 +162,13 @@ CVC.addEventListener('keyup', () => {
 
 confirm_button.addEventListener('click', cardValidation);
 continue_button.addEventListener('click', () => {
+    form.reset();
     confirmation.style.display = 'none';
     cardInfo.style.display = 'block';
-    input[i].style.borderColor = 'var(--lightGrayishViolet';
-    input[i].nextElementSibling.style.display = 'none';
+    for (let i = 0; i < small.length; i++) {
+        small[i].style.display = 'none';
+    };
+    for (let i = 0; i < input.length; i++) {
+        input[i].style.borderColor = 'var(--lightGrayishViolet)';
+    };
 });
