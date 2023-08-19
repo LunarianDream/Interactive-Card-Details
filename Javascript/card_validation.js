@@ -25,6 +25,25 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     cardValidation;
 });
+
+function formatCardNumber () {
+
+    if (cardnumber.value.length == 4 ) {
+        return cardnumber.value = '' + cardnumber.value.slice(0,4) + ' '
+    }
+
+    if (cardnumber.value.length == 9) {
+        return cardnumber.value = '' + cardnumber.value.slice(0,4) + ' ' + cardnumber.value.slice(5,9) + ' '
+    }
+
+    if (cardnumber.value.length == 14) {
+        return cardnumber.value = '' + cardnumber.value.slice(0,4) + ' ' + cardnumber.value.slice(5,9) + ' ' + cardnumber.value.slice(10,14) + ' '
+    }
+
+    return null 
+    
+}
+
 const cardValidation = function() {
 
     let isValid = true
@@ -121,40 +140,68 @@ let backCardCVC = document.querySelector('.back_card_CVC');
 /* ==================== 
 Front Card Number
 ======================= */
-cardnumber.addEventListener('keyup', () => {
-    frontCardNumbers.innerText = cardnumber.value;
+cardnumber.addEventListener('input', () => {
+    formatCardNumber();
+    let ccNumber = (""+ cardnumber.value).replace(/[A-Za-z]/g, "")
+    cardnumber.value = ccNumber;
+    let finalCardNumber = ccNumber;
+    
+
+    frontCardNumbers.innerText = finalCardNumber;
+
+    if (ccNumber == "") {
+        return frontCardNumbers.innerText = "0000 0000 0000 0000";
+    };
+
+    
 });
 
 /* ==================== 
 Front Cardholder Name
 ======================= */
 
-cardholder.addEventListener('keyup', () => {
+cardholder.addEventListener('input', () => {
     frontCardName.innerText = cardholder.value;
+
+    if (cardholder.value == "") {
+        frontCardName.innerText = "Jane Appleseed";
+    };
 });
 
 /* ==================== 
 Front Card Month
 ======================= */
-month.addEventListener('keyup', () => {
+month.addEventListener('input', () => {
     frontCardMonth.innerText = month.value;
+
+    if (month.value == "") {
+        frontCardMonth.innerText = "00";
+    };
 });
 
 /* ==================== 
 Front Card Year
 ======================= */
 
-year.addEventListener('keyup', () => {
+year.addEventListener('input', () => {
     frontCardYear.innerText = year.value;
+
+    if (year.value == "") {
+        frontCardYear.innerText = "00";
+    };
 });
 
 /* ==================== 
 Back Card CVC
 ======================= */
 
-CVC.addEventListener('keyup', () => {
+CVC.addEventListener('input', () => {
     backCardCVC.innerText = CVC.value;
-})
+
+    if (CVC.value == "") {
+        backCardCVC.innerText = "000";
+    };
+});
 
 /////////////////////////////////
 /* Buttons */
