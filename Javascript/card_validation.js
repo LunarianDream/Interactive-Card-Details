@@ -92,6 +92,10 @@ Month
                 year.nextElementSibling.style.display = 'inline';
                 year.nextElementSibling.innerText = `Can't contain letters`;
                 isValid = false;
+            } else if (month.value > 12) {
+                month.style.borderColor = 'var(--inputError)';
+                year.nextElementSibling.style.display = 'inline';
+                year.nextElementSibling.innerText = `Can't be greater than 12`;
             }
 
 /* ==================== 
